@@ -62,4 +62,5 @@ replay_pid*
 # Application properties (contains sensitive data like passwords)
 src/main/resources/application.properties
 src/main/resources/application.yml
+src/main/resources/application.yaml
 >>>>>>> de03d6beb9888001c711af8507d7b2002e93f1bd
