@@ -45,9 +45,6 @@ public class StockMovement {
     @Column(name = "date", nullable = false)
     private LocalDateTime date = LocalDateTime.now();
 
-    //employee_id
-    //construction_site_id
-    //product_id
 
 
 
