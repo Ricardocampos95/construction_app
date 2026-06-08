@@ -33,8 +33,8 @@ public class Product {
     @Column(name = "unit", nullable = false)
     private UnitType unitType;
 
-    @Column(name = "quantity", nullable = false, precision = 10, scale = 2)
-    private BigDecimal quantity;
+    @Column(name = "reference", nullable = false, unique = true)
+    private String reference;
 
     @Column(name = "min_stock_alert", nullable = false, precision = 10, scale = 2)
     private BigDecimal minStockAlert;
