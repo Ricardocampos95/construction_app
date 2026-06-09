@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record StockMovementCreateDto(
-        @Positive(message = "A quantidade tem de ser maior que 0.")
+        @Positive(message = "A quantidade tem de ser maior que zero.")
         @NotNull(message = "A quantidade é obrigatória.")
         BigDecimal quantity,
         @NotNull(message = "Obrigatório informar saída ou entrada de produto.")
