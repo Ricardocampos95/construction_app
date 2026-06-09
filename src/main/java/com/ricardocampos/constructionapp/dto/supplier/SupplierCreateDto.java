@@ -11,6 +11,7 @@ public record SupplierCreateDto(
         @NotBlank(message = "O nif é obrigatório.")
         @Pattern(regexp = "^[a-zA-Z0-9]{5,20}$", message = "NIF inválido.")
         String nif,
+        @NotBlank(message = "É obrigatório inserir morada.")
         String address,
         @Pattern(regexp = "^\\+?[1-9]\\d{1,14}$", message = "Número de telemóvel inválido.")
         String phone,
