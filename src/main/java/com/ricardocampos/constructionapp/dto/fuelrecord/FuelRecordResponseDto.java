@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public record FuelRecordResponseDto(
         UUID id,
-        LocalDateTime recordDate,
+        LocalDateTime date,
         BigDecimal liters,
         BigDecimal kmHours,
         BigDecimal cost,
