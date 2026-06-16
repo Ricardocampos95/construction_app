@@ -1,4 +1,4 @@
-package com.ricardocampos.constructionapp.dto.constructionsite;
+package com.ricardocampos.constructionapp.dto.constructionsitevehicle;
 
 import jakarta.validation.constraints.NotNull;
 
