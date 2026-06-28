@@ -1,6 +1,7 @@
 package com.ricardocampos.constructionapp.mapper;
 
 import com.ricardocampos.constructionapp.dto.client.ClientCreateDto;
+import com.ricardocampos.constructionapp.dto.client.ClientPatchDto;
 import com.ricardocampos.constructionapp.dto.client.ClientResponseDto;
 import com.ricardocampos.constructionapp.dto.client.ClientSummaryDto;
 import com.ricardocampos.constructionapp.entities.Client;
@@ -18,7 +19,7 @@ public interface ClientMapper {
 
     //ignore all null properties from dto
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateEntityFromDto(ClientCreateDto dto, @MappingTarget Client entity);
+    void updateEntityFromDto(ClientPatchDto dto, @MappingTarget Client entity);
 
 
 

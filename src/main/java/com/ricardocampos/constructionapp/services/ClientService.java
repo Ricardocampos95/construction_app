@@ -1,6 +1,7 @@
 package com.ricardocampos.constructionapp.services;
 
 import com.ricardocampos.constructionapp.dto.client.ClientCreateDto;
+import com.ricardocampos.constructionapp.dto.client.ClientPatchDto;
 import com.ricardocampos.constructionapp.dto.client.ClientResponseDto;
 import com.ricardocampos.constructionapp.dto.client.ClientStatusDto;
 import com.ricardocampos.constructionapp.entities.Client;
@@ -87,7 +88,7 @@ public class ClientService {
     }
 
     @Transactional
-    public ClientResponseDto update (ClientCreateDto dto, UUID id){
+    public ClientResponseDto update (ClientPatchDto dto, UUID id){
         Client client = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Cliente não encontrado."));
 
