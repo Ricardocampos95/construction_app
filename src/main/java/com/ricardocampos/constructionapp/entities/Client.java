@@ -41,7 +41,7 @@ public class Client {
     @Column(name = "email", length = 150)
     private String email;
 
-    @Column(name = "active", nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
-    private boolean active;
+    @Column(name = "active", nullable = false)
+    private boolean active = true;
 
 }
