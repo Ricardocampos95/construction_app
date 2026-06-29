@@ -49,6 +49,6 @@ public class Employee {
     @Column(name = "role", nullable = false)
     private EmployeeRole role;
 
-    @Column(name = "active", nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
-    private boolean active;
+    @Column(name = "active", nullable = false)
+    private boolean active = true;
 }
