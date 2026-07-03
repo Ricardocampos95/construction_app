@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +17,8 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@SQLDelete(sql = "UPDATE construction_site SET active = false WHERE id ?")
+@SQLRestriction("active = true")
 public class ConstructionSite {
 
     @ManyToOne()
@@ -45,5 +49,8 @@ public class ConstructionSite {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private ConstructionSiteStatus status;
+
+    @Column(nullable = false)
+    private Boolean active = true;
 
 }
