@@ -69,5 +69,23 @@ public class GlobalExceptionHandler {
 
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiErrorResponse> handleGenericException(Exception e,
+                                                                   HttpServletRequest request){
+
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+
+        ApiErrorResponse error = new ApiErrorResponse(
+                LocalDateTime.now(),
+                status.value(),
+                status.getReasonPhrase(),
+                e.getMessage(),
+                request.getRequestURI()
+        );
+
+        return ResponseEntity.status(status).body(error);
+
+    }
+
 
 }
