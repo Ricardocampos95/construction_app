@@ -22,10 +22,6 @@ public interface ConstructionSiteRepository extends JpaRepository<ConstructionSi
     List<ConstructionSite> findByActiveFalseAndStatus(ConstructionSiteStatus status);
 
     boolean existsByLocationIgnoreCaseAndClientId(String location, UUID clientId);
-
-
-
-    // Ignorar esta native query, tirar a constraint da entity e fazer o filtro manual no service para ver as obras active/inactive
-
+    
 
 }
