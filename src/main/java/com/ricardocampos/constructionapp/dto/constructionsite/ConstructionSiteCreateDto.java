@@ -16,6 +16,10 @@ public record ConstructionSiteCreateDto(
         @NotNull(message = "É obrigatório a data de inicio.")
         @FutureOrPresent(message = "A data deve ser a atual ou uma data futura.")
         LocalDate startDate,
+
+        @NotNull(message = "É obrigatório o estado da obra")
+        ConstructionSiteStatus status,
+
         @NotNull(message = "É obrigatório o cliente.")
         UUID clientId
 ) {
