@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiErrorResponse> handleBusiness(BusinessException e,
                                                            HttpServletRequest request
     ){
-        HttpStatus status = HttpStatus.UNPROCESSABLE_CONTENT;
+        HttpStatus status = HttpStatus.BAD_REQUEST;
 
         ApiErrorResponse error = new ApiErrorResponse(
                 LocalDateTime.now(),
