@@ -1,13 +1,13 @@
 package com.ricardocampos.constructionapp.entities;
 
 
-import com.ricardocampos.constructionapp.entities.keys.ConstructionSiteVehicleId;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "construction_site_vehicle")
@@ -16,17 +16,17 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ConstructionSiteVehicle {
 
-    @EmbeddedId
-    private ConstructionSiteVehicleId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "construction_site_vehicle_id")
+    private UUID id;
 
     @ManyToOne
-    @MapsId("constructionSiteId")
-    @JoinColumn(name = "construction_site_id")
+    @JoinColumn(name = "construction_site_id", nullable = false)
     private ConstructionSite constructionSite;
 
     @ManyToOne
-    @MapsId("vehicleId")
-    @JoinColumn(name = "vehicle_id")
+    @JoinColumn(name = "vehicle_id", nullable = false)
     private Vehicle vehicle;
 
     @Column(name = "start_date", nullable = false)

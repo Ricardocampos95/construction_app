@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record ConstructionSiteVehicleCreateDto(
+
+        UUID constructionSiteVehicleId,
         @NotNull(message = "A obra é obrigatória.")
         UUID constructionSiteId,
         @NotNull(message = "O veiculo é obrigatório.")
