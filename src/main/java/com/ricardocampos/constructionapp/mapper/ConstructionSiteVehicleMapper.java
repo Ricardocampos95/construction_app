@@ -5,9 +5,7 @@ import com.ricardocampos.constructionapp.dto.constructionsitevehicle.Constructio
 import com.ricardocampos.constructionapp.entities.ConstructionSite;
 import com.ricardocampos.constructionapp.entities.ConstructionSiteVehicle;
 import com.ricardocampos.constructionapp.entities.Vehicle;
-import com.ricardocampos.constructionapp.entities.keys.ConstructionSiteVehicleId;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring",
@@ -24,14 +22,10 @@ public interface ConstructionSiteVehicleMapper {
                         ConstructionSite constructionSite,
                         Vehicle vehicle
     ) {
-        ConstructionSiteVehicleId id = new ConstructionSiteVehicleId(
-                    constructionSite.getId(),
-                    vehicle.getId()
-        );
 
         ConstructionSiteVehicle constructionSiteVehicle = new ConstructionSiteVehicle();
 
-        constructionSiteVehicle.setId(id);
+        constructionSiteVehicle.setId(dto.constructionSiteVehicleId());
         constructionSiteVehicle.setStartDate(dto.startDate());
         constructionSiteVehicle.setEndDate(dto.endDate());
         constructionSiteVehicle.setConstructionSite(constructionSite);
