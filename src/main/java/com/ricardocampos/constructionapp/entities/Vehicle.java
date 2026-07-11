@@ -21,6 +21,10 @@ public class Vehicle {
             fetch = FetchType.LAZY)
     private List<FuelRecord> fuelRecordList;
 
+    @OneToMany(mappedBy = "vehicle",
+              fetch = FetchType.LAZY)
+    private List<ConstructionSiteVehicle> constructionSiteList;
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "vehicle_id")
