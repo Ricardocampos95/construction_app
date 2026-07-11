@@ -35,6 +35,10 @@ public class ConstructionSite {
             fetch = FetchType.LAZY)
     private List<StockMovement> stockMovements;
 
+    @OneToMany(mappedBy = "constructionSite",
+               fetch = FetchType.LAZY)
+    private List<ConstructionSiteVehicle> constructionSiteVehicleList;
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "construction_site_id")
