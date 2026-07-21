@@ -34,14 +34,14 @@ public class Vehicle {
     private String brand;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "vehicle_type", nullable = false)
+    @Column(name = "vehicle_type", nullable = false, columnDefinition = "vehicle_type")
     private VehicleType vehicleType;
 
     @Column(name = "license_plate", unique = true)
     private String licensePlate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", nullable = false, columnDefinition = "vehicle_status")
     private VehicleStatus status;
 
     @Column(name = "internal_code", unique = true, length = 20)
