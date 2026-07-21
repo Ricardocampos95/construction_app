@@ -5,5 +5,18 @@ public enum VehicleStatus {
     CONSTRUCTION_SITE,
     SHIPYARD,
     MAINTENANCE,
-    DISABLED
+    DISABLED;
+
+
+
+    public static boolean isValid(String status){
+
+        for(VehicleStatus st : VehicleStatus.values()){
+            if(st.name().equalsIgnoreCase(status)){
+                return true;
+            }
+        }
+        return false;
+
+    }
 }
